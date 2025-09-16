@@ -1,0 +1,271 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #E5E7EB;
+    color: #1F2937;
+    position: relative;
+    overflow-x: hidden;
+}
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    text-align: center;
+}
+header {
+    background: linear-gradient(to right, #1E3A8A, #06B6D4);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #1F2937;
+}
+nav .logo {
+    font-size: 1.8em;
+    color: #06B6D4;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #F97316;
+}
+.hero, .blog-post {
+    padding: 60px 20px;
+}
+.hero h1, .blog-post h1 {
+    font-size: 2.8em;
+    margin: 0;
+    color: #1E3A8A;
+}
+.hero p, .blog-post p {
+    font-size: 1.3em;
+    color: #1F2937;
+}
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: #F97316;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 10px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+.btn:hover {
+    background: #EA580C;
+    transform: scale(1.05);
+}
+.btn:active {
+    transform: scale(0.95);
+}
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes slideInLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInRight {
+    0% { transform: translateX(50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes techPulse {
+    0% { box-shadow: 0 0 5px #06B6D4; }
+    50% { box-shadow: 0 0 20px #F97316; }
+    100% { box-shadow: 0 0 5px #06B6D4; }
+}
+.stats, .training, .jobs, .stories, .partners, .blog, .contact, .mission, .vision, .preview, .team, .social-feed {
+    padding: 50px 20px;
+    text-align: center;
+}
+.stats {
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.stat-box, .course, .job, .story, .partner, .post, .feed-post {
+    flex: 1;
+    min-width: 220px;
+    padding: 20px;
+    margin: 10px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.stat-box:hover, .course:hover, .job:hover, .story:hover, .partner:hover, .post:hover, .feed-post:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.stat-box {
+    background: #06B6D4;
+    color: #FFFFFF;
+    animation: techPulse 2s infinite;
+}
+.course-grid, .job-grid, .story-grid, .partner-grid, .blog-grid, .feed-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.team {
+    background: #E5E7EB;
+}
+.team-member {
+    margin: 20px;
+}
+form, .newsletter {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+form input, form select, form textarea, form button, .newsletter input, .newsletter button {
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+}
+.job-counter {
+    margin: 20px 0;
+    font-size: 1.6em;
+    color: #1E3A8A;
+}
+.story-slider {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.story-slider .story {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.story-slider .story.active {
+    display: block;
+    opacity: 1;
+}
+.slider-nav {
+    margin-top: 10px;
+}
+.slider-nav .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #D1D5DB;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+}
+.slider-nav .dot.active {
+    background: #F97316;
+}
+.faq-item {
+    text-align: left;
+    margin: 10px 0;
+    padding: 15px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.faq-item p {
+    display: none;
+}
+.faq-item.active p {
+    display: block;
+}
+footer {
+    background: #1F2937;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 30px;
+}
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #F97316;
+    color: #FFFFFF;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+#chatbot-messages {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    padding: 15px;
+    max-width: 300px;
+    border-radius: 8px;
+}
+@media (max-width: 768px) {
+    .hero h1, .blog-post h1 { font-size: 2em; }
+    .stat-box, .course, .job, .story, .partner, .post, .feed-post { min-width: 100%; max-width: 100%; }
+    nav ul { flex-direction: column; gap: 10px; }
+    .btn { padding: 14px 28px; font-size: 1.1em; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h1, .blog-post h1 { font-size: 2.4em; }
+    .stat-box, .course, .job, .story, .partner, .post, .feed-post { min-width: 45%; }
+    .btn { padding: 14px 28px; font-size: 1.1em; }
+}
